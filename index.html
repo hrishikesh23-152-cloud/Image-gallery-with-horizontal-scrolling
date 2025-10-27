@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="./images/back.png" id="back"><img/>
+         <div class="gallery">
+        <div >
+            <span><img src="./images/image-1.png"><img/></span>
+            <span><img src="./images/image-2.png"><img/></span>
+            <span><img src="./images/image-3.png"><img/></span>
+        </div>
+         <div >
+            <span><img src="./images//image-4.png"><img/></span>
+            <span><img src="./images//image-5.png"><img/></span>
+            <span><img src="./images/image-6.png"><img/></span>
+        </div>
+    </div>
+        <img src="./images/next.png" id="next"><img/>
+    </div>
+   <script>
+    let scrlcon = document.querySelector(".gallery");
+    let back = document.getElementById("back");
+    let next = document.getElementById("next");
+    scrlcon.addEventListener("wheel",(e)=>{
+        e.preventDefault();
+        scrlcon.scrollLeft+=e.deltaX;
+    })
+    back.addEventListener("click",()=>{
+        scrlcon.scrollLeft+=900;
+    })
+    next.addEventListener("click",()=>{
+        scrlcon.scrollLeft-=900
+    })
+   </script>
+</body>
+
+</html>
